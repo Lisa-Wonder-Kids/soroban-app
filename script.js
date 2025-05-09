@@ -1,3 +1,4 @@
+<script>
 document.querySelectorAll('.bead').forEach(bead => {
   bead.addEventListener('click', toggleBead);
   bead.addEventListener('touchstart', toggleBead, { passive: true });
@@ -24,3 +25,4 @@ function toggleBead(event) {
     if (allAfterInactive) bead.classList.remove('active');
   }
 }
+</script>
