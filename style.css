@@ -1,0 +1,95 @@
+:root {
+  --rod-width: 60px;
+  --rod-height: 200px;
+  --bead-width: 50px;
+  --bead-height: 30px;
+}
+
+body {
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  margin: 0;
+  height: 100vh;
+}
+
+.soroban {
+  display: flex;
+  gap: 10px;
+  background: #8B4513;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+.rod {
+  position: relative;
+  width: var(--rod-width);
+  height: var(--rod-height);
+  background: #D2B48C;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rod-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: black;
+}
+
+.heaven, .gap-space, .earth {
+  z-index: 1;
+}
+
+.heaven {
+  height: 12%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.gap-space {
+  height: 8%;
+}
+
+.earth {
+  height: 52%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.bar {
+  position: absolute;
+  top: 30%;
+  width: 100%;
+  height: 8px;
+  background: black;
+}
+
+.bead {
+  width: var(--bead-width);
+  height: var(--bead-height);
+  background: radial-gradient(circle at 30% 30%, #444, #111);
+  border-radius: 50% / 40%;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.bead.active {
+  background: radial-gradient(circle at 30% 30%, #FFD700, #FFA500);
+}
+
+.bead.heaven.active {
+  transform: translateY(150%);
+}
+
+.bead.earth.active {
+  transform: translateY(-150%);
+}
